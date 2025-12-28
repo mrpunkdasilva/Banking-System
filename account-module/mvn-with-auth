@@ -1,0 +1,147 @@
+#!/bin/bash
+
+# Função para imprimir texto colorido
+print_color() {
+    echo -e "\e[$1m$2\e[0m"
+}
+
+# Arte ASCII
+print_ascii_art() {
+    print_color "35" "  ____             _       _    "
+    print_color "35" " |  _ \ _ __ _   _| |_ ___| | __"
+    print_color "35" " | |_) | '__| | | | __/ _ \ |/ /"
+    print_color "35" " |  __/| |  | |_| | ||  __/   < "
+    print_color "35" " |_|   |_|   \__,_|\__\___|_|\_\\"
+    print_color "35" "                                "
+}
+
+# Exibe a arte ASCII
+print_ascii_art
+
+# Verifica se o arquivo settings.xml existe, caso contrário, cria um
+if [ ! -f "settings.xml" ]; then
+    print_color "31" "⚠️  Aviso: O arquivo settings.xml não foi encontrado no diretório atual."
+    print_color "31" "🛠  Criando um arquivo padrão settings.xml..."
+    touch settings.xml
+    print_color "32" "✅ Arquivo settings.xml criado com sucesso."
+else
+    print_color "32" "✅ Arquivo settings.xml encontrado."
+fi
+
+# Função para garantir que o JDK 17 esteja instalado e JAVA_HOME configurado
+ensure_jdk17_installed() {
+    local java_17_found=false
+    local java_home_path=""
+
+    print_color "34" "🔍 Verificando se Java 17 está realmente instalado..."
+
+    # 1. Tenta verificar se 'java' no PATH é a versão 17
+    if java -version 2>&1 | grep -q "version \"17\."; then
+        print_color "32" "✅ Java 17 detectado no PATH do sistema."
+        java_17_found=true
+        # Tenta derivar JAVA_HOME a partir de 'which java'
+        if command -v realpath &> /dev/null && command -v java &> /dev/null; then
+            java_home_path=$(realpath $(dirname $(which java))/..)
+        fi
+    fi
+
+    # 2. Se não encontrado via PATH, tenta procurar em locais comuns ou com 'update-alternatives'
+    if [ "$java_17_found" = false ]; then
+        print_color "33" "⚠️  Java 17 não encontrado no PATH. Tentando localizar em diretórios comuns..."
+
+        # Tenta encontrar o JAVA_HOME usando 'update-alternatives' (comum em Debian/Ubuntu)
+        if command -v update-alternatives &> /dev/null; then
+            local alt_path=$(update-alternatives --query java | grep -A1 "Status: auto" | grep "Link:" | grep "java-17" | sed 's/Link: //')
+            if [ -n "$alt_path" ]; then
+                java_home_path=$(dirname $(dirname "$alt_path"))
+                if [ -d "$java_home_path" ]; then
+                    print_color "32" "✅ Java 17 encontrado via update-alternatives: $java_home_path"
+                    java_17_found=true
+                fi
+            fi
+        fi
+
+        # Se ainda não encontrou, tenta caminhos de instalação comuns
+        if [ "$java_17_found" = false ]; then
+            if [ -d "/usr/lib/jvm/java-17-openjdk-amd64" ]; then
+                java_home_path="/usr/lib/jvm/java-17-openjdk-amd64"
+                print_color "32" "✅ Java 17 encontrado em caminho padrão: $java_home_path"
+                java_17_found=true
+            elif [ -d "/usr/lib/jvm/java-17-openjdk" ]; then # Para outras distros como Fedora/CentOS
+                java_home_path="/usr/lib/jvm/java-17-openjdk"
+                print_color "32" "✅ Java 17 encontrado em caminho padrão: $java_home_path"
+                java_17_found=true
+            fi
+        fi
+    fi
+
+    # Se Java 17 foi encontrado, define JAVA_HOME e sai
+    if [ "$java_17_found" = true ]; then
+        export JAVA_HOME="$java_home_path"
+        print_color "32" "✅ JAVA_HOME definido para: $JAVA_HOME"
+        return 0 # Sucesso
+    else
+        # Se Java 17 não foi encontrado após todas as verificações, então instala
+        print_color "31" "❌ Java 17 não encontrado em nenhum local. Iniciando a instalação..."
+        if command -v apt &> /dev/null; then
+            sudo apt update
+            sudo apt install -y openjdk-17-jdk
+        elif command -v dnf &> /dev/null; then
+            sudo dnf install -y java-17-openjdk
+        elif command -v yum &> /dev/null; then
+            sudo yum install -y java-17-openjdk
+        elif command -v pacman &> /dev/null; then
+            sudo pacman -S --noconfirm jdk17-openjdk
+        else
+            print_color "31" "❌ Gerenciador de pacotes não suportado. Instale o JDK 17 manualmente."
+            exit 1
+        fi
+        print_color "32" "✅ JDK 17 instalado com sucesso."
+
+        # Após a instalação, tenta definir JAVA_HOME novamente
+        print_color "34" "🔍 Tentando definir JAVA_HOME após a instalação..."
+        local post_install_java_home=""
+        if command -v update-alternatives &> /dev/null; then
+            local alt_path=$(update-alternatives --query java | grep -A1 "Status: auto" | grep "Link:" | grep "java-17" | sed 's/Link: //')
+            if [ -n "$alt_path" ]; then
+                post_install_java_home=$(dirname $(dirname "$alt_path"))
+            fi
+        fi
+        if [ -z "$post_install_java_home" ]; then
+            if [ -d "/usr/lib/jvm/java-17-openjdk-amd64" ]; then
+                post_install_java_home="/usr/lib/jvm/java-17-openjdk-amd64"
+            elif [ -d "/usr/lib/jvm/java-17-openjdk" ]; then
+                post_install_java_home="/usr/lib/jvm/java-17-openjdk"
+            elif command -v realpath &> /dev/null && command -v java &> /dev/null; then
+                post_install_java_home=$(realpath $(dirname $(which java))/..)
+            fi
+        fi
+
+        if [ -n "$post_install_java_home" ]; then
+            export JAVA_HOME="$post_install_java_home"
+            print_color "32" "✅ JAVA_HOME definido para: $JAVA_HOME"
+            return 0 # Sucesso
+        else
+            print_color "31" "❌ Não foi possível determinar o JAVA_HOME para Java 17 automaticamente após a instalação."
+            print_color "31" "Por favor, defina-o manualmente: export JAVA_HOME=/caminho/do/seu/jdk17"
+            exit 1
+        fi
+    fi
+}
+
+# Chama a função principal para garantir que o JDK 17 esteja pronto
+ensure_jdk17_installed
+
+# Verifica se JAVA_HOME foi definido (deve ser verdadeiro após a função acima)
+if [ -z "$JAVA_HOME" ]; then
+    print_color "31" "❌ Erro: JAVA_HOME não está definido. Não é possível continuar."
+    exit 1
+fi
+
+# Exibe a versão do Java usando JAVA_HOME
+print_color "34" "🔍 Verificando a versão do Java usando JAVA_HOME..."
+"$JAVA_HOME"/bin/java -version
+
+# Executa o Maven com as configurações locais
+print_color "36" "🚀 Executando Maven com as configurações locais..."
+mvn -s settings.xml "$@"

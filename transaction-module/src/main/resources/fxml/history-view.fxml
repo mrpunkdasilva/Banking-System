@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.jala.university.presentation.controller.TransactionHistoryController"
+      stylesheets="@../styles/history-view.css"
+      styleClass="history-container">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label text="Histórico de Transações" styleClass="history-title">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Label>
+
+    <!-- Filtros -->
+    <GridPane hgap="15" vgap="15" styleClass="filter-panel">
+        <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+        </padding>
+
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+
+        <Label text="Data Inicial:" styleClass="filter-label" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <DatePicker fx:id="startDatePicker" styleClass="filter-date-picker" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Data Final:" styleClass="filter-label" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <DatePicker fx:id="endDatePicker" styleClass="filter-date-picker" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+        <Label text="Status:" styleClass="filter-label" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="statusFilterComboBox" prefWidth="150.0" styleClass="filter-combo-box" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Button fx:id="filterButton" text="Filtrar" styleClass="filter-button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <Button fx:id="clearFilterButton" text="Limpar Filtros" styleClass="clear-filter-button" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    </GridPane>
+
+    <!-- Tabela de Transações -->
+    <TableView fx:id="transactionTable" VBox.vgrow="ALWAYS" styleClass="transaction-table">
+        <!-- Colunas são adicionadas programaticamente -->
+    </TableView>
+
+    <!-- Mensagem de Status -->
+    <Label fx:id="statusLabel" styleClass="status-message" />
+
+    <!-- Botões de Ação -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Voltar" onAction="#handleBack" styleClass="back-button" />
+    </HBox>
+</VBox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jala.university.presentation.controller.ListAccountController">
+    <children>
+        <Pane prefHeight="395.0" prefWidth="475.0">
+            <children>
+                <Button layoutX="293.0" layoutY="356.0" mnemonicParsing="false" onAction="#onReturn" prefHeight="26.0" prefWidth="80.0" text="Volver" />
+                <TableView fx:id="accountsTable" layoutX="30.0" layoutY="68.0" prefHeight="238.0" prefWidth="523.0">
+                    <columns>
+                        <TableColumn fx:id="accountNumber" prefWidth="129.0" text="Numero da Conta" />
+                        <TableColumn fx:id="name" prefWidth="120.0" text="Nome" />
+                        <TableColumn fx:id="balance" prefWidth="99.0" text="Saldo" />
+                        <TableColumn fx:id="status" prefWidth="75.0" text="Estado" />
+                        <TableColumn fx:id="currency" prefWidth="99.0" text="Moeda" />
+                    </columns>
+                </TableView>
+            <Button layoutX="389.0" layoutY="356.0" mnemonicParsing="false" onAction="#onUpdate" prefHeight="26.0" prefWidth="80.0" text="Atualizar" />
+            <Button layoutX="481.0" layoutY="356.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="80.0" text="Eliminar" />
+            </children>
+        </Pane>
+    </children>
+</VBox>

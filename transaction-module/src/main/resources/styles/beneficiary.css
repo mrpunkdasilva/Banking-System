@@ -1,0 +1,7 @@
+.root {
+    -fx-text-fill: black;
+}
+
+.label, .button, .text-field, .table-view, .table-cell {
+    -fx-text-fill: black;
+}

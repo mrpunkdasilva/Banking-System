@@ -1,0 +1,105 @@
+/* Estilo para o container principal */
+.history-container {
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 20px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+}
+
+/* Estilo para o título do histórico */
+.history-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-padding: 10px 0;
+}
+
+/* Estilo para o painel de filtros */
+.filter-panel {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+}
+
+/* Estilo para os rótulos de filtro */
+.filter-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+    -fx-padding: 5px 0; /* Adicionando padding para espaçamento */
+}
+
+/* Estilo para os DatePickers de filtro */
+.filter-date-picker {
+    -fx-background-color: #ecf0f1;
+    -fx-border-radius: 5px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+}
+
+/* Estilo para o ComboBox de filtro */
+.filter-combo-box {
+    -fx-background-color: #ecf0f1;
+    -fx-border-radius: 5px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+}
+
+/* Estilo para o botão de filtro */
+.filter-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.filter-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Estilo para o botão de limpar filtros */
+.clear-filter-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px 16px;
+    -fx-cursor: hand;
+}
+
+.clear-filter-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* Estilo para a tabela de transações */
+.transaction-table {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+/* Estilo para a mensagem de status */
+.status-message {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e74c3c;
+    -fx-padding: 10px; /* Ajustando padding para mais espaço */
+}
+
+/* Estilo para o botão de voltar */
+.back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3498db;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.back-button:hover {
+    -fx-text-fill: #3498db; /* Mantendo a cor azul no hover */
+    -fx-background-color: transparent;
+}

@@ -1,0 +1,134 @@
+/* Estilo para o container do cabeçalho */
+.header-container {
+    -fx-background-color: #f5f5f5;
+    -fx-padding: 20px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 0 0 1px 0;
+}
+
+/* Estilo para o título da tela */
+.screen-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0.0, 0, 1);
+}
+
+/* Estilo para o botão de voltar */
+.back-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3498db;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+.back-button:hover {
+    -fx-text-fill: #2980b9;
+}
+
+/* Estilo para a linha separadora */
+.separator-line {
+    -fx-stroke: #bdc3c7;
+    -fx-stroke-width: 1;
+}
+
+/* Estilo para o container de conteúdo */
+.content-pane {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+/* Estilo para o container de detalhes */
+.details-container {
+    -fx-padding: 20px;
+}
+
+/* Estilo para o container de status */
+.status-container {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+}
+
+/* Estilo para o ícone de status */
+.status-icon {
+    -fx-font-size: 18px;
+    -fx-text-fill: #27ae60; /* Verde para status positivo */
+}
+
+/* Estilo para o rótulo de status */
+.status-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Estilo para o container de valor */
+.amount-container {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #dcdcdc;
+    -fx-border-width: 1px;
+}
+
+/* Estilo para o valor da transação */
+.amount-value {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e74c3c; /* Vermelho para destaque */
+}
+
+/* Estilo para o grid de informações */
+.info-grid {
+    -fx-padding: 10px;
+}
+
+/* Estilo para rótulos de campo */
+.field-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* Estilo para valores de campo */
+.field-value {
+    -fx-font-size: 16px;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Estilo para os detalhes do remetente e destinatário */
+.details-pane {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para o container de ações */
+.actions-container {
+    -fx-padding: 10px;
+}
+
+/* Estilo para o botão de ação */
+.action-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 2, 0.0, 0, 1);
+}
+
+.action-button:hover {
+    -fx-background-color: #2980b9;
+}

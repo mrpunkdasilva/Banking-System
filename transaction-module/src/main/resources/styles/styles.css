@@ -1,0 +1,507 @@
+/* Estilos gerais */
+.root {
+    -fx-font-family: "System";
+}
+
+.main-pane {
+    -fx-background-color: transparent;
+}
+
+/* Painel esquerdo */
+.left-pane {
+    -fx-background-color: linear-gradient(to bottom right, white, #f0f0f0);
+    -fx-background-radius: 20 0 0 20;
+    -fx-min-height: 600px;
+}
+
+/* Painel direito */
+.right-pane {
+    -fx-background-color: #343a40;
+    -fx-background-radius: 0 20 20 0;
+    -fx-min-height: 600px;
+}
+
+/* Título "LOG IN" */
+.login-title {
+    -fx-text-fill: #e63946;
+    -fx-font-size: 24px;
+    -fx-font-weight: normal;
+}
+
+/* Titulo "Transfer" */
+.transfer-title {
+    -fx-text-fill: #e63946;
+    -fx-font-size: 28px;
+    -fx-font-weight: normal;
+}
+
+/* Título "Menu" */
+.navigation-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: normal;
+    -fx-text-alignment: center;
+}
+
+/* Campos de entrada */
+.input-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e63946 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: #333333;
+}
+
+.input-field:focused {
+    -fx-border-color: transparent transparent #e63946 transparent;
+}
+
+/* Ajustar espaçamento para o TextArea de descrição */
+.input-field.text-area {
+    -fx-pref-height: 120px;
+    -fx-min-height: 100px;
+}
+
+/* DatePicker */
+.date-picker {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e63946 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: #e63946;
+}
+
+.date-picker .cell {
+    -fx-background-color: white;
+    -fx-text-fill: #333333;
+}
+
+.date-picker .cell:hover {
+    -fx-background-color: #f8d7da;
+}
+
+.date-picker .cell:focused {
+    -fx-background-color: #e63946;
+    -fx-text-fill: white;
+}
+
+.date-picker .selected {
+    -fx-background-color: #e63946;
+    -fx-text-fill: white;
+}
+
+.date-picker .today {
+    -fx-border-color: #e63946;
+}
+
+/* Ícones dos campos */
+.field-icon {
+    -fx-text-fill: #555555;
+}
+
+/* Link "Esqueceu a senha?" */
+.forgot-password {
+    -fx-text-fill: #555555;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+}
+
+.forgot-password:hover {
+    -fx-text-fill: #e63946;
+}
+
+/* Botão de login */
+.login-button {
+    -fx-background-color: #e63946;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+}
+
+.login-button:hover {
+    -fx-background-color: #d62b39;
+}
+
+/* Texto "Não tem uma conta?" */
+.no-account-label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: normal;
+}
+
+/* Botão de cadastro */
+.signup-button {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+}
+
+.signup-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Círculos */
+.white-circle {
+    -fx-fill: white;
+}
+
+.red-circle {
+    -fx-fill: #e63946;
+}
+
+/* Estilos para a tela de cadastro */
+.signup-pane {
+    -fx-background-color: #f8f9fa;
+    -fx-background-radius: 20;
+}
+
+/* Cabeçalhos de seção */
+.section-header {
+    -fx-text-fill: #6c757d;
+    -fx-font-weight: bold;
+}
+
+/* Labels de campos */
+.field-label {
+    -fx-text-fill: #495057;
+    -fx-font-weight: normal;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e63946 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #333333;
+}
+
+.combo-box:focused {
+    -fx-border-color: transparent transparent #e63946 transparent;
+}
+
+/* Link "Cancelar" */
+.cancel-link {
+    -fx-text-fill: #555555;
+    -fx-border-color: transparent;
+    -fx-underline: false;
+}
+
+.cancel-link:hover {
+    -fx-text-fill: #e63946;
+}
+
+/* Botão de transferência */
+.transfer-button {
+    -fx-background-color: #e63946;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+}
+
+.transfer-button:hover {
+    -fx-background-color: #d62b39;
+}
+
+/* Botões de navegação */
+.nav-button {
+    -fx-background-color: white;
+    -fx-text-fill: #343a40;
+    -fx-background-radius: 4;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 20px;
+    -fx-min-width: 200px;
+}
+
+.nav-button:hover {
+    -fx-background-color: #f8f9fa;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+}
+
+/* Botões da tela de cadastro */
+.register-button {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+}
+
+.register-button:hover {
+    -fx-background-color: #218838;
+}
+
+.back-button {
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+}
+
+.back-button:hover {
+    -fx-background-color: #5a6268;
+}
+
+/* Estilos para a tela de perfil - Design Minimalista */
+.profile-background {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Barra de cabeçalho */
+.profile-header-bar {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-padding: 10px;
+}
+
+.profile-title {
+    -fx-text-fill: #212529;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.back-icon-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 50%;
+    -fx-padding: 5px;
+}
+
+.back-icon-button:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.icon-path {
+    -fx-fill: #495057;
+}
+
+/* Avatar e informações do usuário */
+.profile-avatar-container {
+    -fx-padding: 10px;
+}
+
+.profile-avatar-circle {
+    -fx-fill: #e9ecef;
+    -fx-stroke: #dee2e6;
+    -fx-stroke-width: 1;
+}
+
+.profile-initials {
+    -fx-text-fill: #495057;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.profile-name-container {
+    -fx-padding: 5px 0 15px 0;
+}
+
+.profile-name {
+    -fx-text-fill: #212529;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.profile-role {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+}
+
+/* Seções de informações */
+.profile-section {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 1);
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+}
+
+.profile-section-header {
+    -fx-spacing: 10px;
+    -fx-padding: 0 0 5px 0;
+}
+
+.section-icon {
+    -fx-fill: #007bff;
+}
+
+.section-title {
+    -fx-text-fill: #212529;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.section-separator {
+    -fx-background-color: #e9ecef;
+}
+
+/* Linhas de informações */
+.profile-info-row {
+    -fx-padding: 8px 0;
+    -fx-spacing: 10px;
+    -fx-alignment: center-left;
+}
+
+.info-label {
+    -fx-text-fill: #6c757d;
+    -fx-min-width: 180px;
+    -fx-font-size: 14px;
+}
+
+.info-value {
+    -fx-text-fill: #212529;
+    -fx-font-size: 14px;
+    -fx-alignment: center-right;
+    -fx-text-alignment: right;
+}
+
+/* Ações do perfil */
+.profile-actions {
+    -fx-padding: 10px 0 0 0;
+    -fx-spacing: 10px;
+}
+
+.profile-action-button {
+    -fx-background-color: #f8f9fa;
+    -fx-text-fill: #212529;
+    -fx-background-radius: 5px;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px 15px;
+    -fx-font-size: 13px;
+    -fx-graphic-text-gap: 8px;
+}
+
+.profile-action-button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+.button-icon {
+    -fx-fill: #6c757d;
+}
+
+/* Status */
+.status-enabled {
+    -fx-text-fill: #28a745;
+    -fx-font-weight: bold;
+    -fx-text-alignment: right;
+}
+
+.status-disabled {
+    -fx-text-fill: #dc3545;
+    -fx-font-weight: bold;
+    -fx-text-alignment: right;
+}
+
+/* Botão de perfil no dashboard */
+.profile-button {
+    -fx-background-color: #f8f9fa;
+    -fx-text-fill: #212529;
+    -fx-background-radius: 5px;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px 10px;
+}
+
+.profile-button:hover {
+    -fx-background-color: #e9ecef;
+}
+
+/* Estilo para ScrollPane transparente */
+.transparent-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.transparent-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll-pane .scroll-bar:vertical,
+.transparent-scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+}
+
+.transparent-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll-pane .scroll-bar:vertical .thumb,
+.transparent-scroll-pane .scroll-bar:horizontal .thumb {
+    -fx-background-color: #6c757d;
+    -fx-background-radius: 5em;
+}
+
+.transparent-scroll-pane .scroll-bar:vertical .track,
+.transparent-scroll-pane .scroll-bar:horizontal .track {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll-pane .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll-pane .scroll-bar:vertical .increment-button,
+.transparent-scroll-pane .scroll-bar:vertical .decrement-button,
+.transparent-scroll-pane .scroll-bar:horizontal .increment-button,
+.transparent-scroll-pane .scroll-bar:horizontal .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll-pane .scroll-bar .increment-arrow,
+.transparent-scroll-pane .scroll-bar .decrement-arrow {
+    -fx-background-color: #6c757d;
+}
+
+/* Estilos para a tela de configurações de segurança */
+.info-description {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 14px;
+    -fx-line-spacing: 1.4;
+}
+
+.security-checkbox {
+    -fx-font-size: 14px;
+    -fx-text-fill: #212529;
+}
+
+.security-checkbox .box {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 3px;
+}
+
+.security-checkbox:selected .box {
+    -fx-background-color: #007bff;
+    -fx-border-color: #007bff;
+}
+
+.security-checkbox:selected .mark {
+    -fx-background-color: white;
+}
+
+.status-message {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px;
+    -fx-background-radius: 4px;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 4px;
+}

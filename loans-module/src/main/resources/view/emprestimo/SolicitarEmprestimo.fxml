@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="386.0" prefWidth="464.0" spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.capstone.controller.emprestimo.SolicitacaoEmprestimoController">
+    
+    <Label text="Solicitar Empréstimo" />
+    
+    <ComboBox fx:id="tipoEmprestimo" promptText="Tipo de Empréstimo" />
+    <TextField fx:id="valorSolicitado" promptText="Valor desejado (R$)" />
+    <ComboBox fx:id="prazoParcelas" promptText="Prazo (meses)" />
+    <ComboBox fx:id="finalidade" promptText="Finalidade" />
+    
+    <Label fx:id="taxaMensal" text="Taxa Mensal: " />
+    <Label fx:id="cet" text="CET Anual: " />
+    <Label fx:id="parcelaMensal" text="Parcela Mensal: " />
+    
+    <Button fx:id="btnSimular" onAction="#simularEmprestimo" text="Simular" />
+    <Button fx:id="btnSolicitar" onAction="#solicitarEmprestimo" text="Solicitar" />
+    
+    <Label fx:id="mensagemResultado" text="" />
+</VBox>

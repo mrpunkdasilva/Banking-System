@@ -1,0 +1,61 @@
+.transparent-scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.heading-primary {
+    -fx-text-fill: #333333;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.heading-secondary {
+    -fx-text-fill: #555555;
+    -fx-font-size: 16px;
+    -fx-font-weight: normal;
+}
+
+.label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 16px;
+}
+
+.text-field {
+    -fx-prompt-text-fill: #888888;
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 15px;
+}
+
+.verify-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+}
+
+.verify-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.resend-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4CAF50;
+    -fx-font-weight: bold;
+    -fx-border-color: #4CAF50;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+}
+
+.resend-button:hover {
+    -fx-background-color: #e8f5e9;
+}
+
+#errorLabel {
+    -fx-text-fill: red;
+    -fx-font-size: 14px;
+}

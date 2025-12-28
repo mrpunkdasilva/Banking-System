@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="/styles/beneficiary.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.jala.university.presentation.controller.BeneficiaryController"
+      style="-fx-background-color: #f4f4f4;">
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="transparent-scroll-pane">
+            <content>
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="Gerenciamento de Beneficiários" style="-fx-font-weight: bold;">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button text="Voltar" onAction="#navigateBackToDashboard"
+                                style="-fx-base: #4682b4; -fx-text-fill: white;">
+                        </Button>
+                    </HBox>
+
+                    <Separator/>
+
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Filtrar por categoria:"/>
+                        <ComboBox fx:id="filterComboBox" prefWidth="150"/>
+                    </HBox>
+
+                    <TableView fx:id="beneficiaryTable" style="-fx-pref-height: 300;">
+                        <!-- As colunas serão adicionadas dinamicamente no controller -->
+                    </TableView>
+
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button text="Adicionar" onAction="#showAddBeneficiaryDialog"
+                                style="-fx-base: #2e8b57; -fx-text-fill: white;"/>
+                        <Button text="Editar" onAction="#showEditBeneficiaryDialog"
+                                style="-fx-base: #1e90ff; -fx-text-fill: white;"/>
+                        <Button text="Remover" onAction="#handleDeleteBeneficiary"
+                                style="-fx-base: #cd5c5c; -fx-text-fill: white;"/>
+                        <Button fx:id="toggleFavoriteButton" text="Favoritar" onAction="#toggleFavorite"
+                                style="-fx-base: #ffd700; -fx-text-fill: #333333;"/>
+                    </HBox>
+
+                    <!-- Formulário para adicionar/editar beneficiários -->
+                    <GridPane fx:id="formPane" visible="false" hgap="10" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="NEVER" minWidth="100"/>
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="200"/>
+                        </columnConstraints>
+
+                        <Label text="Nome:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                        <Label text="Documento:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="documentField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Número da Conta:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="accountNumberField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Banco:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="bankField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                        <!-- Adicionando o checkbox de favorito -->
+                        <Label text="Favorito:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                        <CheckBox fx:id="favoriteCheckBox" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                        <!-- adicionando categorias -->
+                        <Label text="Categoria:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="categoryComboBox" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                            <Button text="Cancelar" onAction="#hideForm" style="-fx-base: #cccccc;"/>
+                            <Button text="Salvar" onAction="#saveBeneficiary" style="-fx-base: #2e8b57; -fx-text-fill: white;"/>
+                        </HBox>
+                    </GridPane>
+
+                    <Label fx:id="statusLabel" style="-fx-font-weight: bold;"/>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

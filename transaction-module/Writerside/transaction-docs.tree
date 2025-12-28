@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+<instance-profile id="transaction-docs" name="Documentação do Módulo de Transações" start-page="overview.md">
+    
+    <!-- Visão Geral -->
+    <toc-element topic="overview.md"/>
+    <toc-element topic="getting-started.md"/>
+    
+    <!-- 4P's do Módulo -->
+    <toc-element topic="4p-overview.md">
+        <toc-element topic="product-overview.md"/>
+        <toc-element topic="process-overview.md"/>
+        <toc-element topic="people-overview.md"/>
+        <toc-element topic="project-overview.md"/>
+    </toc-element>
+    
+    <!-- Arquitetura -->
+    <toc-element topic="architecture.md">
+        <!-- Camadas da Aplicação -->
+        <toc-element topic="domain-layer.md">
+            <toc-element topic="entities.md"/>
+            <toc-element topic="repositories.md"/>
+            <toc-element topic="services.md"/>
+        </toc-element>
+        
+        <toc-element topic="application-layer.md">
+            <toc-element topic="dtos.md"/>
+            <toc-element topic="mappers.md"/>
+            <toc-element topic="service.md"/>
+        </toc-element>
+        
+        <toc-element topic="infrastructure-layer.md">
+            <toc-element topic="persistence.md"/>
+            <toc-element topic="configuration.md"/>
+        </toc-element>
+        
+        <toc-element topic="presentation-layer.md">
+            <toc-element topic="controllers.md"/>
+            <toc-element topic="views.md"/>
+        </toc-element>
+        
+        <!-- Padrões de Design -->
+        <toc-element topic="design-patterns.md">
+            <toc-element topic="adapter-pattern.md"/>
+            <toc-element topic="dependency-inversion.md"/>
+            <toc-element topic="facade-pattern.md"/>
+            <toc-element topic="factory-pattern.md"/>
+        </toc-element>
+    </toc-element>
+    
+    <!-- Diagramas UML -->
+    <toc-element topic="uml-diagrams.md">
+        <toc-element topic="use-case-diagrams.md"/>
+        <toc-element topic="sequence-diagrams.md"/>
+    </toc-element>
+    
+    <!-- Interface do Usuário -->
+    <toc-element topic="user-interface.md">
+        <toc-element topic="login-screen.md"/>
+        <toc-element topic="signup-screen.md"/>
+        <toc-element topic="dashboard-screen.md"/>
+        <toc-element topic="transfer-screen.md"/>
+        <toc-element topic="history-screen.md"/>
+        <toc-element topic="transaction-details-screen.md"/>
+        <toc-element topic="beneficiary-screen.md"/>
+    </toc-element>
+    
+    <!-- Banco de Dados -->
+    <toc-element topic="database.md">
+        <toc-element topic="schema.md"/>
+        <toc-element topic="migrations.md"/>
+    </toc-element>
+    
+    <!-- Configuração -->
+    <toc-element topic="configuration-project.md">
+        <toc-element topic="docker-setup.md"/>
+        <toc-element topic="maven-setup.md"/>
+        <toc-element topic="environment-variables.md"/>
+    </toc-element>
+    
+    <!-- Referência da API -->
+
+    <!-- Guias -->
+    <toc-element topic="guides.md">
+        <toc-element topic="development-guide.md"/>
+        <toc-element topic="checkstyle-guide.md"/>
+        <toc-element topic="testing-guide.md"/>
+        <toc-element topic="deployment-guide.md"/>
+    </toc-element>
+</instance-profile>

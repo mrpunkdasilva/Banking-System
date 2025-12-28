@@ -1,0 +1,102 @@
+/* Estilo para o título principal */
+.header-label {
+    -fx-font-size: 92px; /* Aumentar o tamanho para maior destaque */
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Azul escuro para um toque profissional */
+    -fx-padding: 15px 0;
+}
+
+
+/* Estilo para botões */
+.button {
+    -fx-background-color: #3498db; /* Azul claro para botões principais */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0.0, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #2980b9; /* Azul mais escuro no hover */
+}
+
+/* Estilo específico para botão de exportação CSV */
+#exportCsvButton {
+    -fx-background-color: #e67e22; /* Laranja para destaque */
+    -fx-text-fill: white;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 10px 20px;
+}
+
+#exportCsvButton:hover {
+    -fx-background-color: #d35400; /* Laranja mais escuro no hover */
+}
+
+/* Estilo específico para botão de exportação PDF */
+#exportPdfButton {
+    -fx-background-color: #27ae60; /* Verde para destaque */
+    -fx-text-fill: white;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 10px 20px;
+}
+
+#exportPdfButton:hover {
+    -fx-background-color: #1e8449; /* Verde mais escuro no hover */
+}
+
+/* Estilo para o botão de filtrar */
+.filter-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.filter-button:hover {
+    -fx-text-fill: #2980b9;
+}
+
+/* Estilo para a tabela */
+.table-view {
+    -fx-border-color: #bdc3c7;
+    -fx-background-color: #ffffff; /* Fundo branco para a tabela */
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0.0, 0, 1);
+}
+
+.table-column-header {
+    -fx-background-color: #ecf0f1; /* Fundo claro para cabeçalhos */
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 1px 0; /* Linha inferior para separação */
+}
+
+/* Estilo para o DatePicker */
+.date-picker {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px;
+}
+
+/* Estilo para rótulos */
+.label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 14px;
+}
+
+/* Estilo para o layout geral */
+.root {
+    -fx-background-color: #f5f5f5; /* Fundo geral da aplicação */
+    -fx-padding: 20px;
+}

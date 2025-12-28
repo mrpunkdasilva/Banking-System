@@ -1,0 +1,42 @@
+variables:
+  MAVEN_OPTS: >-
+    -Dhttps.protocols=TLSv1.2
+    -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository
+    -Dorg.slf4j.simpleLogger.showDateTime=true
+    -Djava.awt.headless=true
+  MAVEN_CLI_OPTS: >-
+    --batch-mode
+    --errors
+    --fail-at-end
+    --show-version
+    --no-transfer-progress
+    -DinstallAtEnd=true
+    -DdeployAtEnd=true
+    -U # Fuerza actualización
+    -X # Logs detallados
+
+stages:
+  - build
+  - deploy
+
+image: maven:3-openjdk-17
+
+cache:
+  paths:
+    - .m2/repository
+  key: "$CI_JOB_NAME" # Identificador único para evitar conflictos.
+
+build:
+  stage: build
+  script:
+    - echo "Build"
+    - mvn clean install -U
+
+deploy:jdk17:
+  stage: deploy
+  script:
+    - if [ ! -f ci_settings.xml ]; then
+        echo "CI settings missing! Please see the documentation to generate one.";
+        exit 1;
+      fi
+    - 'mvn deploy --settings ci_settings.xml'

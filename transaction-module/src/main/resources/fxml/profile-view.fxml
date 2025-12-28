@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.SVGPath?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" styleClass="profile-background" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jala.university.presentation.controller.ProfileController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" styleClass="profile-header-bar" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleBackToDashboard" styleClass="back-icon-button">
+               <graphic>
+                  <SVGPath content="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" styleClass="icon-path" />
+               </graphic>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
+            <Label styleClass="profile-title" text="Meu Perfil">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane fitToWidth="true" styleClass="transparent-scroll-pane" BorderPane.alignment="CENTER">
+         <content>
+            <VBox alignment="TOP_CENTER" spacing="25.0">
+               <children>
+                  <StackPane styleClass="profile-avatar-container">
+                     <children>
+                        <Circle radius="50.0" styleClass="profile-avatar-circle" />
+                        <Label fx:id="userInitialsLabel" styleClass="profile-initials" text="JD" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </StackPane>
+                  <VBox alignment="CENTER" styleClass="profile-name-container">
+                     <children>
+                        <Label fx:id="userNameHeader" styleClass="profile-name" text="Nome do Usuário" />
+                        <Label fx:id="userRoleLabel" styleClass="profile-role" text="Função do Usuário" />
+                     </children>
+                  </VBox>
+                  
+                  <VBox styleClass="profile-section">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" styleClass="profile-section-header">
+                           <children>
+                              <SVGPath content="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" styleClass="section-icon" />
+                              <Label styleClass="section-title" text="Informações Pessoais" />
+                           </children>
+                        </HBox>
+                        <Separator styleClass="section-separator" />
+                        
+                        <HBox styleClass="profile-info-row">
+                           <children>
+                              <Label styleClass="info-label" text="Nome" />
+                              <Label fx:id="nameLabel" styleClass="info-value" text="Nome do Usuário" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        
+                        <HBox styleClass="profile-info-row">
+                           <children>
+                              <Label styleClass="info-label" text="Email" />
+                              <Label fx:id="emailLabel" styleClass="info-value" text="email@exemplo.com" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        
+                        <HBox styleClass="profile-info-row">
+                           <children>
+                              <Label styleClass="info-label" text="CPF" />
+                              <Label fx:id="cpfLabel" styleClass="info-value" text="123.456.789-00" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        
+                        <HBox styleClass="profile-info-row">
+                           <children>
+                              <Label styleClass="info-label" text="Telefone" />
+                              <Label fx:id="phoneLabel" styleClass="info-value" text="(00) 00000-0000" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  
+                  <VBox styleClass="profile-section">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" styleClass="profile-section-header">
+                           <children>
+                              <SVGPath content="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5Z" styleClass="section-icon" />
+                              <Label styleClass="section-title" text="Segurança" />
+                           </children>
+                        </HBox>
+                        <Separator styleClass="section-separator" />
+                        
+                        <HBox styleClass="profile-info-row">
+                           <children>
+                              <Label styleClass="info-label" text="Autenticação de dois fatores" />
+                              <Label fx:id="twoFactorStatusLabel" styleClass="status-disabled" text="Desativado" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        
+                        <HBox styleClass="profile-actions">
+                           <children>
+                              <Button fx:id="twoFactorButton" mnemonicParsing="false" onAction="#handleTwoFactorSettings" styleClass="profile-action-button" text="Configurar 2FA">
+                                 <graphic>
+                                    <SVGPath content="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5Z" styleClass="button-icon" />
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#handleChangePassword" styleClass="profile-action-button" text="Alterar Senha">
+                                 <graphic>
+                                    <SVGPath content="M17,7H22V17H17V19A1,1 0 0,0 18,20H20V22H17.5C16.95,22 16,21.55 16,21C16,21.55 15.05,22 14.5,22H12V20H14A1,1 0 0,0 15,19V5A1,1 0 0,0 14,4H12V2H14.5C15.05,2 16,2.45 16,3C16,2.45 16.95,2 17.5,2H20V4H18A1,1 0 0,0 17,5V7M2,7H13V9H4V15H13V17H2V7M20,15V9H17V15H20Z" styleClass="button-icon" />
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

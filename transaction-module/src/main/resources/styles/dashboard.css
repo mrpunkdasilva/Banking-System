@@ -1,0 +1,245 @@
+/* Root styles */
+#dashboardRoot {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Header styles */
+.header-label {
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.welcome-label {
+    -fx-font-size: 14;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* Card styles */
+.dashboard-card {
+    -fx-background-color: white;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 3);
+}
+
+.balance-card {
+    -fx-border-color: #3498db;
+    -fx-border-width: 0 0 0 4;
+}
+
+.transaction-card {
+    -fx-border-color: #2ecc71;
+    -fx-border-width: 0 0 0 4;
+}
+
+.card-icon-container {
+    -fx-min-width: 32;
+    -fx-min-height: 32;
+    -fx-max-width: 32;
+    -fx-max-height: 32;
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 16;
+}
+
+.card-icon {
+    -fx-fill: #7f8c8d;
+    -fx-scale-x: 0.6;
+    -fx-scale-y: 0.6;
+}
+
+/* Label styles */
+.subheader-label {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+.balance-label, .transaction-count-label {
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+}
+
+.balance-label {
+    -fx-text-fill: #3498db;
+}
+
+.transaction-count-label {
+    -fx-text-fill: #2ecc71;
+}
+
+.section-label {
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 5 0 0 0;
+}
+
+/* Button styles */
+.action-button {
+    -fx-background-radius: 4;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 10 15;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 3, 0, 0, 1);
+}
+
+.action-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0, 0, 2);
+}
+
+.action-button:pressed {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 2, 0, 0, 0);
+    -fx-translate-y: 1;
+}
+
+.transfer-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.transfer-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+
+.history-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.history-button:hover {
+    -fx-background-color: #27ae60;
+}
+
+.beneficiary-button {
+    -fx-background-color: #9b59b6;
+    -fx-text-fill: white;
+}
+
+.beneficiary-button:hover {
+    -fx-background-color: #8e44ad;
+}
+
+.logout-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: #c0392b;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+}
+
+.logout-button:hover {
+    -fx-background-color: #c0392b;
+    -fx-effect: dropshadow(gaussian, rgba(231, 76, 60, 0.5), 10, 0, 0, 0);
+}
+
+.logout-button:pressed {
+    -fx-background-color: #a93226;
+}
+
+.statement-button {
+    -fx-background-color: #0C9514FF;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: #0C9514FF;
+    -fx-border-width: 1;
+    -fx-border-radius: 3;
+}
+
+.statement-button:hover {
+    -fx-background-color: rgba(12, 149, 20, 0.68);
+    -fx-effect: dropshadow(gaussian, rgba(12, 149, 20, 0.5), 10, 0, 0, 0);
+}
+
+.statement-button:pressed {
+    -fx-background-color: rgba(12, 149, 20, 0.68);
+}
+
+
+/* Table styles */
+.transactions-table {
+    -fx-background-color: white;
+    -fx-border-color: #ecf0f1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.transactions-table .column-header {
+    -fx-background-color: #ecf0f1;
+    -fx-font-weight: bold;
+    -fx-padding: 8;
+}
+
+.transactions-table .table-cell {
+    -fx-padding: 8;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.transactions-table .placeholder {
+    -fx-text-fill: #95a5a6;
+}
+
+.transactions-table .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.transactions-table .table-row-cell:selected {
+    -fx-background-color: #3498db25;
+}
+
+/* Transaction amount styling */
+.positive-amount {
+    -fx-text-fill: #2ecc71;
+    -fx-font-weight: bold;
+}
+
+.negative-amount {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+/* Transaction type styling */
+.credit {
+    -fx-text-fill: #2ecc71;
+}
+
+.debit {
+    -fx-text-fill: #e74c3c;
+}
+
+/* Transaction status styling */
+.completed {
+    -fx-text-fill: #2ecc71;
+}
+
+.pending {
+    -fx-text-fill: #f39c12;
+}
+
+.failed {
+    -fx-text-fill: #e74c3c;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 800) {
+    .header-label {
+        -fx-font-size: 24;
+    }
+    
+    .balance-label, .transaction-count-label {
+        -fx-font-size: 22;
+    }
+    
+    .section-label {
+        -fx-font-size: 16;
+    }
+    
+    .action-button {
+        -fx-font-size: 12;
+        -fx-padding: 8 12;
+    }
+}
